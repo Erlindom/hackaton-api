@@ -19,7 +19,7 @@ contract CourseEnrollment is ERC721, Ownable{
         bool isCertified;
     }
 
-    uint public courseCount;
+    uint public courseCount = 0;
     uint public certificateTokenId;
 
     mapping(uint => Course) public courses;
@@ -29,11 +29,13 @@ contract CourseEnrollment is ERC721, Ownable{
     event StudentEnrolled(uint courseId, address student);
     event CertificateIssued(address student, uint tokenId);
 
-    constructor(address initialOwner) ERC721("CourseCertificate", "CCERT") Ownable(initialOwner){}
+    constructor() ERC721("CourseCertificate", "CCERT") Ownable(msg.sender){}
 
 
     // Crear un nuevo curso
     function createCourse(string memory _name, uint _price, uint _seats) public onlyOwner {
+        require(_price > 0, "El precio debe ser mayor que cero");
+        require(_seats > 0, "El numero de asientos debe ser mayor que cero");
         courses[courseCount] = Course(courseCount, _name, _price, _seats, true);
         courseCount++;
         emit CourseCreated(courseCount, _name, _price, _seats);
