@@ -10,6 +10,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@openzeppelin/contracts": "^5.0.2",
     "express": "^4.19.2"
   }
 }

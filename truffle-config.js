@@ -57,7 +57,20 @@ module.exports = {
    * $ truffle test --network <network-name>
    */
 
-  networks: {
+    networks: {
+      development: {
+        host: "127.0.0.1",
+        port: 8545,
+        network_id: "*", // Acepta cualquier ID de red
+      },
+    },
+    compilers: {
+      solc: {
+        version: "0.8.21", // Versión de Solidity que estás usando
+      },
+    },
+
+  //networks: {
     // Useful for testing. The `development` name is special - truffle uses it by default
     // if it's defined here and no other network is specified at the command line.
     // You should run a client (like ganache, geth, or parity) in a separate terminal
@@ -96,11 +109,11 @@ module.exports = {
     //   network_id: 2111,   // This network is yours, in the cloud.
     //   production: true    // Treats this network as if it was a public net. (default: false)
     // }
-  },
+  //},
 
   // Set default mocha options here, use special reporters, etc.
   mocha: {
-    // timeout: 100000
+     timeout: 100000
   },
 
   // Configure your compilers
