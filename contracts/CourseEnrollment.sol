@@ -11,8 +11,9 @@ contract CourseEnrollment is ERC721, Ownable{
         string description;
         string category;
         uint price;
-        uint seats;
         bool isActive;
+        string courseImg;
+        string courseVid; 
     }
 
     struct Student {
@@ -56,7 +57,7 @@ contract CourseEnrollment is ERC721, Ownable{
     mapping(uint => Certificate) public certificates;
 
     event UserAdded(address indexed usuario, string nombre, uint edad, string correo, string rol);
-    event CourseCreated(uint courseId, string courseName, uint price, uint seats);
+    event CourseCreated(uint courseId, string courseName, uint price);
     event StudentEnrolled(uint courseId, address student);
     event CertificateIssued(address student, uint tokenId);
     event ProfessorAdded(address professorAddress);
@@ -77,27 +78,24 @@ contract CourseEnrollment is ERC721, Ownable{
     }
 
     function deleteAdminOrProfessor(string memory _role) public {
-        removeUser();
         bytes32 roleHash = keccak256(abi.encodePacked(_role));
         if (roleHash == keccak256(abi.encodePacked("Professor"))) {
-            require (professors[msg.sender].isProfessor, "No es un profesor.");
+            require(professors[msg.sender].isProfessor, "No es un profesor.");
             delete professors[msg.sender];
         } else if (roleHash == keccak256(abi.encodePacked("Admin"))) {
-            require (admins[msg.sender].isAdmin, "No es un admin.");
+            require(admins[msg.sender].isAdmin, "No es un admin");
             delete admins[msg.sender];
         } else {
             revert("Rol no valido.");
         }
     }
 
-
     // Crear un nuevo curso
-    function createCourse(string memory _name, string memory _description, string memory _category, uint _price, uint _seats) public onlyOwner {
+    function createCourse(string memory _name, string memory _description, string memory _category, uint _price, string memory _img, string memory _vid) public onlyOwner {
         require(_price > 0, "El precio debe ser mayor que cero");
-        require(_seats > 0, "El numero de asientos debe ser mayor que cero");
-        courses[courseCount] = Course(courseCount, _name, _description, _category, _price, _seats, true);
+        courses[courseCount] = Course(courseCount, _name, _description, _category, _price, true, _img, _vid);
         courseCount++;
-        emit CourseCreated(courseCount, _name, _price, _seats);
+        emit CourseCreated(courseCount, _name, _price);
     }
 
     // Inscripción de estudiantes
@@ -106,10 +104,8 @@ contract CourseEnrollment is ERC721, Ownable{
         require(course.isActive, "El curso no esta activo.");
         require(msg.value == course.price, "Pago incorrecto.");
         require(enrolledStudents[_courseId][msg.sender].isEnrolled == false, "Ya esta inscrito.");
-        require(course.seats > 0, "No hay cupos disponibles.");
 
         enrolledStudents[_courseId][msg.sender] = Student(msg.sender, true, false);
-        courses[_courseId].seats -= 1;
 
         emit StudentEnrolled(_courseId, msg.sender);
     }
@@ -171,9 +167,7 @@ contract CourseEnrollment is ERC721, Ownable{
     function addUser(string memory _nombre, uint _edad, string memory _correo, string memory _role) public {
 
         // Verifica si el usuario ya existe
-        if (bytes(users[msg.sender].nombre).length != 0) {
-            revert("El usuario ya existe");
-        }
+        require(bytes(users[msg.sender].nombre).length == 0, "El usuario ya existe");
 
         // Verifica si el rol es válido
         bytes32 rolHash = keccak256(abi.encodePacked(_role));
@@ -182,29 +176,41 @@ contract CourseEnrollment is ERC721, Ownable{
             rolHash != keccak256(abi.encodePacked("Student"))) {
             revert("El rol no es valido");
         }
-        if (bytes(users[msg.sender].rol).length != 0) {
-            asignRoleToUser(users[msg.sender].rol);
-        }
+        
 
         // Agrega el usuario al mapeo usando la dirección del remitente como clave
         
         users[msg.sender] = User(_nombre, _edad, _correo, _role);
+        
+        if (bytes(users[msg.sender].rol).length != 0) {
+            if (rolHash != keccak256(abi.encodePacked("Student"))) {
+                asignRoleToUser(users[msg.sender].rol);
+            }
+        }
         
         // Emitir un evento para notificar que se ha agregado un nuevo usuario
         emit UserAdded(msg.sender, _nombre, _edad, _correo, _role);
     }
     
     // Función para obtener la información de un usuario
-    function obtenerUsuario(address _usuario) public view returns (string memory nombre, uint edad, string memory correo) {
+    function obtenerUsuario(address _usuario) public view returns (string memory nombre, uint edad, string memory correo, string memory rol) {
         User storage user = users[_usuario];
-        return (user.nombre, user.edad, user.correo);
+        return (user.nombre, user.edad, user.correo, user.rol);
     }
 
     function removeUser() public {
+        require(bytes(users[msg.sender].nombre).length != 0, "El usuario no existe");
+
+        // Llama a deleteAdminOrProfessor solo si el usuario tiene un rol válido
         if (bytes(users[msg.sender].rol).length != 0) {
-            deleteAdminOrProfessor(users[msg.sender].rol);
+            // Verifica si el rol es válido antes de llamar a deleteAdminOrProfessor
+            bytes32 rolHash = keccak256(abi.encodePacked(users[msg.sender].rol));
+            if (rolHash != keccak256(abi.encodePacked("Student"))) {
+                deleteAdminOrProfessor(users[msg.sender].rol);
+            }
+            
         }
+        
         delete users[msg.sender];
     }
-
 }
