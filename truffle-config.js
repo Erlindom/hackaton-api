@@ -46,6 +46,12 @@
 
 // const HDWalletProvider = require('@truffle/hdwallet-provider');
 
+
+const HDWalletProvider = require('@truffle/hdwallet-provider');
+require('dotenv').config();
+
+const { MNEMONIC, INFURA_PROJECT_ID } = process.env;
+
 module.exports = {
   /**
    * Networks define how you connect to your ethereum client and let you set the
@@ -57,12 +63,20 @@ module.exports = {
    * $ truffle test --network <network-name>
    */
 
+
+  
     networks: {
       development: {
         host: "127.0.0.1",
         port: 8545,
         network_id: "*", // Acepta cualquier ID de red
       },
+    },
+    rinkeby: {
+      provider: function() {
+        return new HDWalletProvider(MNEMONIC, "https://rinkeby.infura.io/v3/78a8988f311c4eb8a1a762c95f1f9db1");
+      },
+      network_id: 4,      // Rinkeby's id
     },
     compilers: {
       solc: {

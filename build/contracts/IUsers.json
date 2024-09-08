@@ -1,0 +1,276 @@
+{
+  "contractName": "IUsers",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_nombre",
+          "type": "string"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_edad",
+          "type": "uint256"
+        },
+        {
+          "internalType": "string",
+          "name": "_correo",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_rol",
+          "type": "string"
+        }
+      ],
+      "name": "addUser",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "removeUser",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.21+commit.d9974bed\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_nombre\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"_edad\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"_correo\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_rol\",\"type\":\"string\"}],\"name\":\"addUser\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"removeUser\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/IUsers.sol\":\"IUsers\"},\"evmVersion\":\"shanghai\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/IUsers.sol\":{\"keccak256\":\"0xdb5a0f837e4618dfe9f7c6deae09cddc897bd4fa9fd7e143191c3dbdae6565e0\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://3c637cca3bef356298de41d9f6cad31d0700eb01cfe0a11f0c52c7221af668fc\",\"dweb:/ipfs/QmSLcw2JcrREdB9kJu64CqYcSKsSNoDpFNDgB8a2HRzrv3\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.21;\n\ninterface IUsers {\n    function addUser(string memory _nombre, uint _edad, string memory _correo, string memory _rol) external;\n    function removeUser() external;\n}\n",
+  "sourcePath": "/home/hackaton/Desktop/Hackaton/hackaton-api/contracts/IUsers.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/IUsers.sol",
+    "exportedSymbols": {
+      "IUsers": [
+        3597
+      ]
+    },
+    "id": 3598,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 3582,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".21"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "32:24:14"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "IUsers",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "id": 3597,
+        "linearizedBaseContracts": [
+          3597
+        ],
+        "name": "IUsers",
+        "nameLocation": "68:6:14",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "functionSelector": "c9b2338d",
+            "id": 3593,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addUser",
+            "nameLocation": "90:7:14",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3591,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3584,
+                  "mutability": "mutable",
+                  "name": "_nombre",
+                  "nameLocation": "112:7:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3593,
+                  "src": "98:21:14",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 3583,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "98:6:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3586,
+                  "mutability": "mutable",
+                  "name": "_edad",
+                  "nameLocation": "126:5:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3593,
+                  "src": "121:10:14",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 3585,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "121:4:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3588,
+                  "mutability": "mutable",
+                  "name": "_correo",
+                  "nameLocation": "147:7:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3593,
+                  "src": "133:21:14",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 3587,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "133:6:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 3590,
+                  "mutability": "mutable",
+                  "name": "_rol",
+                  "nameLocation": "170:4:14",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3593,
+                  "src": "156:18:14",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 3589,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "156:6:14",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "97:78:14"
+            },
+            "returnParameters": {
+              "id": 3592,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "184:0:14"
+            },
+            "scope": 3597,
+            "src": "81:104:14",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "f944f4c7",
+            "id": 3596,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "removeUser",
+            "nameLocation": "199:10:14",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3594,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "209:2:14"
+            },
+            "returnParameters": {
+              "id": 3595,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "220:0:14"
+            },
+            "scope": 3597,
+            "src": "190:31:14",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 3598,
+        "src": "58:165:14",
+        "usedErrors": [],
+        "usedEvents": []
+      }
+    ],
+    "src": "32:192:14"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.21+commit.d9974bed.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.16",
+  "updatedAt": "2024-09-07T23:46:04.390Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}
