@@ -1,0 +1,214 @@
+{
+  "contractName": "ICourseEnrollment",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_role",
+          "type": "string"
+        }
+      ],
+      "name": "asignRoleToUser",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_role",
+          "type": "string"
+        }
+      ],
+      "name": "deleteAdminOrProfessor",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.21+commit.d9974bed\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_role\",\"type\":\"string\"}],\"name\":\"asignRoleToUser\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_role\",\"type\":\"string\"}],\"name\":\"deleteAdminOrProfessor\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/ICourseEnrollment.sol\":\"ICourseEnrollment\"},\"evmVersion\":\"shanghai\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/ICourseEnrollment.sol\":{\"keccak256\":\"0x8fd7a51b4369de81b77d3667bd673dc7face88ca952a5e9dd7a20c5f956aea27\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://240222b69bf3c0e6e7b9ed92b9adaff96d63c95dd8e6a0cacfeb0fdd3cc9ba4c\",\"dweb:/ipfs/QmWXPPyBvJSMdh3z6nbhkwUqGjVXyuM1JnM9jDTxgtm7u7\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.21;\n\ninterface ICourseEnrollment {\n    function asignRoleToUser(string memory _role) external;\n    function deleteAdminOrProfessor(string memory _role) external;\n}\n",
+  "sourcePath": "/home/hackaton/Desktop/Hackaton/hackaton-api/contracts/ICourseEnrollment.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/ICourseEnrollment.sol",
+    "exportedSymbols": {
+      "ICourseEnrollment": [
+        3580
+      ]
+    },
+    "id": 3581,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 3569,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".21"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "32:24:13"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "ICourseEnrollment",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "id": 3580,
+        "linearizedBaseContracts": [
+          3580
+        ],
+        "name": "ICourseEnrollment",
+        "nameLocation": "68:17:13",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "functionSelector": "f3bd994a",
+            "id": 3574,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "asignRoleToUser",
+            "nameLocation": "101:15:13",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3572,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3571,
+                  "mutability": "mutable",
+                  "name": "_role",
+                  "nameLocation": "131:5:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3574,
+                  "src": "117:19:13",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 3570,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "117:6:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "116:21:13"
+            },
+            "returnParameters": {
+              "id": 3573,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "146:0:13"
+            },
+            "scope": 3580,
+            "src": "92:55:13",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "functionSelector": "81a1edb1",
+            "id": 3579,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "deleteAdminOrProfessor",
+            "nameLocation": "161:22:13",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 3577,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 3576,
+                  "mutability": "mutable",
+                  "name": "_role",
+                  "nameLocation": "198:5:13",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 3579,
+                  "src": "184:19:13",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 3575,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "184:6:13",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "183:21:13"
+            },
+            "returnParameters": {
+              "id": 3578,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "213:0:13"
+            },
+            "scope": 3580,
+            "src": "152:62:13",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 3581,
+        "src": "58:158:13",
+        "usedErrors": [],
+        "usedEvents": []
+      }
+    ],
+    "src": "32:185:13"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.21+commit.d9974bed.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.16",
+  "updatedAt": "2024-09-07T23:46:04.390Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}
