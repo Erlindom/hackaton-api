@@ -40871,10 +40871,285 @@
       "links": {},
       "address": "0x6460E7B3A5083fDb6F9CD26404A866A83946aebd",
       "transactionHash": "0x7cc776dee39e61993693dc8c23cf939dbd0271841f7cc407644166e32397fb27"
+    },
+    "1725802755225": {
+      "events": {
+        "0x44d6d25963f097ad14f29f06854a01f575648a1ef82f30e562ccd3889717e339": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "adminAddress",
+              "type": "address"
+            }
+          ],
+          "name": "AdminAdded",
+          "type": "event"
+        },
+        "0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "approved",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "uint256",
+              "name": "tokenId",
+              "type": "uint256"
+            }
+          ],
+          "name": "Approval",
+          "type": "event"
+        },
+        "0x17307eab39ab6107e8899845ad3d59bd9653f200f220920489ca2b5937696c31": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "operator",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "bool",
+              "name": "approved",
+              "type": "bool"
+            }
+          ],
+          "name": "ApprovalForAll",
+          "type": "event"
+        },
+        "0xfec61b9ec0e29047dbeea981617649d79f187d172cfd492695a3d0bfee28883e": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "student",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "tokenId",
+              "type": "uint256"
+            }
+          ],
+          "name": "CertificateIssued",
+          "type": "event"
+        },
+        "0x642f95fc4f73850f9892227ccee20fac4904ba0645894b644766d21a1a8d8205": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "courseId",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "string",
+              "name": "courseName",
+              "type": "string"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "price",
+              "type": "uint256"
+            }
+          ],
+          "name": "CourseCreated",
+          "type": "event"
+        },
+        "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "previousOwner",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "newOwner",
+              "type": "address"
+            }
+          ],
+          "name": "OwnershipTransferred",
+          "type": "event"
+        },
+        "0xc314a8ab46f679df157d309facb47ada7dbb5e5e6f33f130257acb39c8237c40": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "professorAddress",
+              "type": "address"
+            }
+          ],
+          "name": "ProfessorAdded",
+          "type": "event"
+        },
+        "0x0729bef4a0569fb1fa09db94121e32114ae18918357d5324c3dd31440b83149e": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "courseId",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "student",
+              "type": "address"
+            }
+          ],
+          "name": "StudentEnrolled",
+          "type": "event"
+        },
+        "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "from",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "to",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "uint256",
+              "name": "tokenId",
+              "type": "uint256"
+            }
+          ],
+          "name": "Transfer",
+          "type": "event"
+        },
+        "0x93c49eb1f13ebf39cf4e8e4121a855c3ec5b9690af4c714ecd1381bc485bc0c6": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "usuario",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "string",
+              "name": "nombre",
+              "type": "string"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "edad",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "string",
+              "name": "correo",
+              "type": "string"
+            },
+            {
+              "indexed": false,
+              "internalType": "string",
+              "name": "rol",
+              "type": "string"
+            }
+          ],
+          "name": "UserAdded",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0x811c85aFcc00f2d64527D0d746C5f162175b722f",
+      "transactionHash": "0xc518a6af5a148b56bfbd61fd95fae5575b606dffcf5465baf2005c89696b1faa"
+    },
+    "1725802922849": {
+      "events": {},
+      "links": {},
+      "address": "0x9F1fc8455076e7AFC0395d9972113967e06a2bd5",
+      "transactionHash": "0x24dfc7bb69f7fedce58ec87e014346a90786e7ee918abf57026f628d090a1b56"
+    },
+    "1725803287982": {
+      "events": {},
+      "links": {},
+      "address": "0xFFEe964bC762eF050DdDB90CA1bFe69f97d5A840",
+      "transactionHash": "0x4f4fdb8c6734d6fc72a5c910bbeb3c2300482023c50535a24c58db6da76b1fb0"
+    },
+    "1725803610259": {
+      "events": {},
+      "links": {},
+      "address": "0xF3b6A876Fb8b498f422b48792573d8869b6C864f",
+      "transactionHash": "0x6e45ada26d0a6ad4089a47d30bc8ea4bc1f5ac8b7bdb312ce7e2e17069eb0cf4"
+    },
+    "1725807697680": {
+      "events": {},
+      "links": {},
+      "address": "0xD6A07917F829AEAF511B7a69Ad6b5725Df9cda2A",
+      "transactionHash": "0xd117350df244fca62ea6e728480d94badca0545685b0f50774c27bc887185c98"
+    },
+    "1725808543141": {
+      "events": {},
+      "links": {},
+      "address": "0xE8Da7696a323C2A5572Eb1B3F9be8a21C8a940f5",
+      "transactionHash": "0x26e2b03a6253a8b38920769f6e523ad74f264a50af7ac531f220d648a1add4df"
+    },
+    "1725808966563": {
+      "events": {},
+      "links": {},
+      "address": "0x9B0D55B8049FC2088c280624032cCD0112758aBF",
+      "transactionHash": "0x8e31c6e231572ae450235db1f78b7ebdae30385c6c58b22c9dcf9e8453f525a7"
+    },
+    "1725809568381": {
+      "events": {},
+      "links": {},
+      "address": "0x99b84811b552B2ba8229B742187f7aa5CEADd040",
+      "transactionHash": "0x3b3d5f224210470fa10ed80009e0d38f71435f41e5d1be167ae2fffc182e2eb2"
+    },
+    "1725809693078": {
+      "events": {},
+      "links": {},
+      "address": "0x1118013Aa4F1b1406D020BF37dCDbAfC8d3329A4",
+      "transactionHash": "0x05fa422a86cee131ea5d8e244c21de9f947ea6a334e0305d72ae0bf825b3c046"
     }
   },
   "schemaVersion": "3.4.16",
-  "updatedAt": "2024-09-08T04:50:42.601Z",
+  "updatedAt": "2024-09-08T15:35:06.447Z",
   "networkType": "ethereum",
   "devdoc": {
     "errors": {
